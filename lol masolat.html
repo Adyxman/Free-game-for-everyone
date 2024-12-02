@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Monitor Prank</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            flex-direction: column; /* Függőleges elrendezés */
+        }
+        .monitor {
+            position: relative;
+            width: 100%;
+            height: 66vh; /* Kétharmad magasság */
+            border: 2px solid #0f0;
+            background-color: #001100;
+            overflow: hidden;
+            margin-bottom: 20px; /* Kis távolság a gombtól */
+        }
+        .wave {
+            position: absolute;
+            width: 400%; /* Végtelen szélesség biztosítása */
+            height: 100%;
+            top: 30%; /* Feljebb igazítva */
+            transform: translateY(-50%); /* Középre igazítás */
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="250"><polyline points="0,125 50,125 100,12.5 150,237.5 200,12.5 250,125 300,125 350,125 400,125 450,12.5 500,237.5 550,12.5 600,125 650,125 700,125 750,125 800,12.5 850,237.5 900,12.5 950,125 1000,125" fill="none" stroke="lime" stroke-width="15"/></svg>') repeat-x; /* Nagyobb SVG és folyamatos vonal */
+            animation: waveAnimation 420s linear infinite; /* 7 perc = 420 másodperc */
+        }
+
+        @keyframes waveAnimation {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); } /* Folytatódik balra, megállás nélkül */
+        }
+
+        .start-btn {
+            background-color: transparent;
+            border: 2px solid #0f0;
+            color: #0f0;
+            padding: 30px 60px; /* 200%-kal nagyobb padding */
+            font-size: 40px; /* 200%-kal nagyobb betűméret */
+            font-weight: bold;
+            border-radius: 50px; /* Lekerekített szélek */
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .start-btn:hover {
+            background-color: #0f0;
+            color: #001100;
+        }
+    </style>
+</head>
+<body>
+    <div class="monitor">
+        <div class="wave"></div>
+    </div>
+    <button class="start-btn" onclick="openLink()">START</button>
+
+    <script>
+        // Elrejtett link a kódban
+        var secretLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+
+        function openLink() {
+            // A gomb megnyomásakor a titkos linket nyitjuk meg
+            window.open(secretLink, "_blank");
+        }
+    </script>
+</body>
+</html>
